@@ -1,7 +1,7 @@
 using Player_Controller.Player_Inputs;
 using UnityEngine;
 
-namespace Player_Controller
+namespace Player_Controller.Player_Behaviours
 {
     public class PlayerMovement : MonoBehaviour
     {
