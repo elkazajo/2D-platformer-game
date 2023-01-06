@@ -11,7 +11,7 @@ namespace Player_Controller.Player_Inputs
         {
             foreach (var input in inputs)
             {
-                inputState.SetButtonValue(input.button, input.Value);
+                inputState.SetButtonValue(input.button, input.InputStateValue);
             }
         }
     }

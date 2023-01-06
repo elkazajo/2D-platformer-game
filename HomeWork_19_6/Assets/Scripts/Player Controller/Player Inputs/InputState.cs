@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using Player_Controller.Player_Behaviours;
 using UnityEngine;
 
 namespace Player_Controller.Player_Inputs
 {
     public class InputState : MonoBehaviour
     {
+        public Directions direction = Directions.FaceRight;
+        
         private Dictionary<Buttons, ButtonState> _buttonStates = new Dictionary<Buttons, ButtonState>();
 
         public void SetButtonValue(Buttons key, bool value)

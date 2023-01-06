@@ -10,7 +10,7 @@ namespace Player_Controller.Player_Inputs
         public Buttons button;
         public Condition condition;
 
-        public bool Value
+        public bool InputStateValue
         {
             get
             {
