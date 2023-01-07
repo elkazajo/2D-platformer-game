@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Effects
 {
-    public class DoubleJumpEffect : MonoBehaviour
+    public class EffectsDestroyer : MonoBehaviour
     {
         private void OnDestroy()
         {

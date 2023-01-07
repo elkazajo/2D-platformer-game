@@ -48,6 +48,11 @@ namespace Managers
             {
                 ChangeAnimationState(3);
             }
+            
+            if (!_collisionState.isGrounded && _collisionState.isOnWall)
+            {
+                ChangeAnimationState(4);
+            }
         }
 
         void ChangeAnimationState(int value)

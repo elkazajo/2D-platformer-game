@@ -9,8 +9,8 @@ namespace Player_Controller.Player_Behaviours
         public int jumpCount = 2;
         public GameObject doubleJumpEffect;
 
-        protected float lastJumpTime = 0;
-        protected int jumpsRemaining = 0;
+        private float _lastJumpTime = 0;
+        private int _jumpsRemaining = 0;
     
         // Start is called before the first frame update
         void Start()
@@ -19,7 +19,7 @@ namespace Player_Controller.Player_Behaviours
         }
 
         // Update is called once per frame
-        void Update()
+        protected virtual void Update()
         {
             var canJump = inputState.GetButtonValue(inputButtons[0]);
             var holdTime = inputState.GetButtonHoldTime(inputButtons[0]);
@@ -28,18 +28,18 @@ namespace Player_Controller.Player_Behaviours
             {
                 if (canJump && holdTime < 0.1f)
                 {
-                    jumpsRemaining = jumpCount - 1;
+                    _jumpsRemaining = jumpCount - 1;
                     OnJump();
                 }
             }
             else
             {
-                if (canJump && holdTime < 0.1f && Time.time - lastJumpTime > jumpDelay)
+                if (canJump && holdTime < 0.1f && Time.time - _lastJumpTime > jumpDelay)
                 {
-                    if (jumpsRemaining > 0)
+                    if (_jumpsRemaining > 0)
                     {
                         OnJump();
-                        jumpsRemaining--;
+                        _jumpsRemaining--;
                         var clone = Instantiate(doubleJumpEffect);
                         clone.transform.position = transform.position;
                     }
@@ -47,10 +47,10 @@ namespace Player_Controller.Player_Behaviours
             }
         }
 
-        protected virtual void OnJump()
+        private void OnJump()
         {
             var velocity = rigidbody2D.velocity;
-            lastJumpTime = Time.time;
+            _lastJumpTime = Time.time;
             rigidbody2D.velocity = new Vector2(velocity.x, jumpSpeed);
         }
     }
