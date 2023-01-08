@@ -8,6 +8,7 @@ namespace Player_Controller.Player_Behaviours
     public abstract class AbstractBehaviour : MonoBehaviour
     {
         public Buttons[] inputButtons;
+        public MonoBehaviour[] disableScripts;
 
         protected InputState inputState;
         protected Rigidbody2D rigidbody2D;
@@ -20,16 +21,12 @@ namespace Player_Controller.Player_Behaviours
             collisionState = GetComponent<CollisionState>();
         }
 
-        // Start is called before the first frame update
-        void Start()
+        protected virtual void ToggleScripts(bool value)
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            foreach (var script in disableScripts)
+            {
+                script.enabled = value;
+            }
         }
     }
 }

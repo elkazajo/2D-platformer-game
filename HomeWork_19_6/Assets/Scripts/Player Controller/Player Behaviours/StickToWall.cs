@@ -20,6 +20,7 @@ namespace Player_Controller.Player_Behaviours
                 if (!onWallDetected)
                 {
                     OnStick();
+                    ToggleScripts(false);
                     onWallDetected = true;
                 }
             }
@@ -28,6 +29,7 @@ namespace Player_Controller.Player_Behaviours
                 if (onWallDetected)
                 {
                     OffWall();
+                    ToggleScripts(true);
                     onWallDetected = false;
                 }
             }
