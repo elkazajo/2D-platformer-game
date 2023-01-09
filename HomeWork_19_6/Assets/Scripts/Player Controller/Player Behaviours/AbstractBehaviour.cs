@@ -21,7 +21,7 @@ namespace Player_Controller.Player_Behaviours
             collisionState = GetComponent<CollisionState>();
         }
 
-        protected virtual void ToggleScripts(bool value)
+        protected void ToggleScripts(bool value)
         {
             foreach (var script in disableScripts)
             {

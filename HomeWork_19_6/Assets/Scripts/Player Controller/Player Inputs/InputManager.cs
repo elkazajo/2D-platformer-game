@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player_Controller.Player_Inputs
@@ -5,13 +6,18 @@ namespace Player_Controller.Player_Inputs
     public class InputManager : MonoBehaviour
     {
         public InputAxisState[] inputs;
-        public InputState inputState;
+        private InputState _inputState;
+
+        private void Awake()
+        {
+            _inputState = GetComponent<InputState>();
+        }
 
         void Update()
         {
             foreach (var input in inputs)
             {
-                inputState.SetButtonValue(input.button, input.InputStateValue);
+                _inputState.SetButtonValue(input.button, input.InputStateValue);
             }
         }
     }

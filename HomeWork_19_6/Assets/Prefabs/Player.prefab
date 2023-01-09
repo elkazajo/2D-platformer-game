@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4304569922769677793}
   - component: {fileID: 4304569922769677799}
   - component: {fileID: 4304569922769677796}
+  - component: {fileID: 7252848349169383693}
+  - component: {fileID: 2207826604359837553}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -290,3 +292,52 @@ MonoBehaviour:
   jumpVelocity: {x: 3, y: 10}
   isJumpingOfWall: 0
   resetDelay: 0.2
+--- !u!114 &7252848349169383693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304569922769677802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69be37073e4e25048b53d1b8a68085b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputButtons: 
+  disableScripts:
+  - {fileID: 4304569922769677804}
+  maxHealth: 3
+  isAlive: 0
+  currentHealth: 0
+  recievedDamage: 0
+--- !u!114 &2207826604359837553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304569922769677802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04408f4ee987aa349b16d6d997f75859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputs:
+  - axisName: Horizontal
+    offValue: 0
+    button: 0
+    condition: 0
+  - axisName: Horizontal
+    offValue: 0
+    button: 1
+    condition: 1
+  - axisName: Fire3
+    offValue: 0
+    button: 4
+    condition: 0
+  - axisName: Jump
+    offValue: 0
+    button: 5
+    condition: 0
+  inputState: {fileID: 4304569922769677804}

@@ -11,6 +11,7 @@ namespace Managers
         private Walk _walkBehaviour;
         private Animator _animator;
         private CollisionState _collisionState;
+        private Health _health;
 
         private void Awake()
         {
@@ -18,6 +19,7 @@ namespace Managers
             _walkBehaviour = GetComponent<Walk>();
             _animator = GetComponent<Animator>();
             _collisionState = GetComponent<CollisionState>();
+            _health = GetComponent<Health>();
         }
 
         void Update()
@@ -45,6 +47,16 @@ namespace Managers
             if (!_collisionState.isGrounded && _collisionState.isOnWall)
             {
                 ChangeAnimationState(4);
+            }
+            
+            if (_health.receivedDamage)
+            {
+                ChangeAnimationState(5);
+            }
+
+            if (!_health.isAlive)
+            {
+                ChangeAnimationState(6);
             }
         }
 
