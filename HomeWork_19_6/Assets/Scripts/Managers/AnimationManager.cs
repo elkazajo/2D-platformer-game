@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Managers
 {
-    public class PlayerManager : MonoBehaviour
+    public class AnimationManager : MonoBehaviour
     {
         private InputState _inputState;
         private Walk _walkBehaviour;
@@ -20,13 +20,6 @@ namespace Managers
             _collisionState = GetComponent<CollisionState>();
         }
 
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
         void Update()
         {
             if (_collisionState.isGrounded)

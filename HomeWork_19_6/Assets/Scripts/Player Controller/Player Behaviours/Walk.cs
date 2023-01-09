@@ -7,14 +7,7 @@ namespace Player_Controller.Player_Behaviours
         public float speed = 3f;
         public float runMultiplier = 2f;
         public bool isRunning;
-    
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
 
-        // Update is called once per frame
         void Update()
         {
             isRunning = false;

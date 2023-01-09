@@ -11,14 +11,7 @@ namespace Player_Controller.Player_Behaviours
 
         private float _lastJumpTime = 0;
         private int _jumpsRemaining = 0;
-    
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
 
-        // Update is called once per frame
         protected virtual void Update()
         {
             var canJump = inputState.GetButtonValue(inputButtons[0]);
