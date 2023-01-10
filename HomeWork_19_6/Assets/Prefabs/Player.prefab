@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &185751329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185751330}
+  m_Layer: 7
+  m_Name: PlayerAttackCollider
+  m_TagString: PlayerAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &185751330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185751329}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4304569922769677801}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4304569922769677802
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,7 +54,7 @@ GameObject:
   - component: {fileID: 4304569922769677796}
   - component: {fileID: 7252848349169383693}
   - component: {fileID: 2207826604359837553}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -41,7 +72,8 @@ Transform:
   m_LocalPosition: {x: -2, y: -0.976, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 185751330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -306,11 +338,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputButtons: 
   disableScripts:
-  - {fileID: 4304569922769677804}
+  - {fileID: 2207826604359837553}
+  - {fileID: 4304569922769677796}
+  - {fileID: 4304569922769677799}
+  - {fileID: 4304569922769677793}
+  - {fileID: 4304569922769677794}
   maxHealth: 3
   isAlive: 0
   currentHealth: 0
-  recievedDamage: 0
+  receivedDamage: 0
+  canReceiveDamage: 0
 --- !u!114 &2207826604359837553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,4 +377,3 @@ MonoBehaviour:
     offValue: 0
     button: 5
     condition: 0
-  inputState: {fileID: 4304569922769677804}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Effects
 {
-    public class EffectsDestroyer : MonoBehaviour
+    public class GameObjectsDestroyer : MonoBehaviour
     {
         private void OnDestroy()
         {
