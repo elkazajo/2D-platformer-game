@@ -1,3 +1,4 @@
+using Common;
 using Player_Controller.Collision;
 using Player_Controller.Player_Behaviours;
 using Player_Controller.Player_Inputs;
@@ -7,11 +8,14 @@ namespace Managers
 {
     public class AnimationManager : MonoBehaviour
     {
+        private const string AnimState = "AnimState";
+        
         private InputState _inputState;
         private Walk _walkBehaviour;
         private Animator _animator;
         private CollisionState _collisionState;
         private Health _health;
+        
 
         private void Awake()
         {
@@ -62,7 +66,7 @@ namespace Managers
 
         void ChangeAnimationState(int value)
         {
-            _animator.SetInteger("AnimState", value);
+            _animator.SetInteger(AnimState, value);
         }
     }
 }

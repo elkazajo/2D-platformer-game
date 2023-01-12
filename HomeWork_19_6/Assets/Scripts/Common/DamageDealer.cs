@@ -1,22 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour
+namespace Common
 {
-    [SerializeField] private float damage;
-    [SerializeField] private string[] tags = { "Player", "Enemy" };
-
-    private void OnTriggerEnter2D(Collider2D col)
+    public class DamageDealer : MonoBehaviour
     {
-        Health health = col.gameObject.GetComponentInParent<Health>();
+        [SerializeField] private float damage;
+        [SerializeField] private string[] tags = { "Player", "Enemy" };
 
-        if (col.gameObject.CompareTag(tags[0]))
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            if (health.currentHealth > 0 && health.canReceiveDamage)
+            Health health = col.gameObject.GetComponentInParent<Health>();
+
+            if (col.gameObject.CompareTag(tags[0]))
             {
-                health.ReceiveDamage(damage);
+                if (health.currentHealth > 0 && health.canReceiveDamage)
+                {
+                    health.ReceiveDamage(damage);
+                }
             }
         }
     }

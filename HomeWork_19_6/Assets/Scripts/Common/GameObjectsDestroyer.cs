@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Effects
+namespace Common
 {
     public class GameObjectsDestroyer : MonoBehaviour
     {
