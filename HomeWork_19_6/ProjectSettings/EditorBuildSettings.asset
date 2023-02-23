@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MovementStaging.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Level 1.unity
+    guid: ab7b3881801bb7d4b837d9f564323888
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 7f6aa1121404eb541a90db6539ace451
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: f29763d68d98ba240a6ee487c62c1be7
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: 4c76bd9a3d969214482070b40de390d0
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: b146412884b16e147819cd48e0f3ca49
   m_configObjects: {}

@@ -7,6 +7,13 @@ public class Collectable : MonoBehaviour
 {
     public string targetTag = "Player";
 
+    private GamePlayUiManager gamePlayUiManager;
+
+    private void Start()
+    {
+        gamePlayUiManager = FindObjectOfType<GamePlayUiManager>();
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag(targetTag))
@@ -16,12 +23,12 @@ public class Collectable : MonoBehaviour
         }
     }
 
-    protected virtual void OnCollect()
+    private void OnCollect()
     {
-        // add necessary logic in child class 
+        gamePlayUiManager.currentCoinsAmount++;
     }
 
-    protected void OnDestroy()
+    private void OnDestroy()
     {
         Destroy(gameObject);
     }

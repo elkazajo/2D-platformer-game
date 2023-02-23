@@ -2,11 +2,10 @@ using System.Collections;
 using Player_Controller.Player_Behaviours;
 using UnityEngine;
 
-namespace Common
-{
     public class Health : AbstractBehaviour
     {
-        [SerializeField] private float maxHealth;    
+        [SerializeField] private float maxHealth; 
+        
         public bool isAlive;
 
         public float currentHealth;
@@ -23,7 +22,7 @@ namespace Common
             spriteRenderer = GetComponent<SpriteRenderer>();
             matRed = Resources.Load("RedMat", typeof(Material)) as Material;
             matDeafault = spriteRenderer.material;
-            currentHealth = maxHealth;
+            currentHealth = maxHealth;            
             isAlive = true;
             receivedDamage = false;
             canReceiveDamage = true;
@@ -62,4 +61,4 @@ namespace Common
             canReceiveDamage = true;
         }
     }
-}
+
